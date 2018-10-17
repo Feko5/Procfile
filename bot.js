@@ -33,20 +33,27 @@ client.user.setGame(`Streming on Youtube`,"https://www.youtube.com/")
 
 
 
-    static void UpdatePresence()
-    {
-        DiscordRichPresence discordPresence;
-        memset(&discordPresence, 0, sizeof(discordPresence));
-        discordPresence.state = "Watch Youtube fo";
-        discordPresence.startTimestamp = 1507665886;
-        discordPresence.partyId = "ae488379-351d-4a4f-ad32-2b9b01c91657";
-        discordPresence.partySize = 1;
-        discordPresence.partyMax = 5;
-        discordPresence.spectateSecret = "MTIzNDV8MTIzNDV8MTMyNDU0";
-        discordPresence.joinSecret = "MTI4NzM0OjFpMmhuZToxMjMxMjM= ";
-        Discord_UpdatePresence(&discordPresence);
-    }
+Client.on("message", message => {
+    var prefix = "$";
+ 
+            var args = message.content.substring(prefix.length).split(" ");
+            if (message.content.startsWith(prefix - "bc")) {
+                         if (!message.member.hasPermission("ADMINISTRATOR"))  return;
+ if (!args[1]) {
+                                let embed3 = new Discord.RichEmbed()
+                                .setDescription(":white_check_mark: | تم ارسال للكل رساله فارغه")
+                                .setColor("#FF0000")
+                                message.channel.sendEmbed(embed3);
+                            } else {
 
+                            let embed4 = new Discord.RichEmbed()
+                                                            .setDescription(':white_check_mark: | تم ارسال للكل الرساله !')
+                                                            .setColor("#008000")
+                                message.channel.sendEmbed(embed4);
+                                                      message.delete();
+                            }
+                          }
+});
 
 
 

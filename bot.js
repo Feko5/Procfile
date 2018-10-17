@@ -28,4 +28,45 @@ client.user.setGame(`Nothing`,"http://twitch.tv/S-F")
   console.log('')
 });
 
+
+
+
+
+
+    static void UpdatePresence()
+    {
+        DiscordRichPresence discordPresence;
+        memset(&discordPresence, 0, sizeof(discordPresence));
+        discordPresence.state = "Watch Youtube fo";
+        discordPresence.startTimestamp = 1507665886;
+        discordPresence.partyId = "ae488379-351d-4a4f-ad32-2b9b01c91657";
+        discordPresence.partySize = 1;
+        discordPresence.partyMax = 5;
+        discordPresence.spectateSecret = "MTIzNDV8MTIzNDV8MTMyNDU0";
+        discordPresence.joinSecret = "MTI4NzM0OjFpMmhuZToxMjMxMjM= ";
+        Discord_UpdatePresence(&discordPresence);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 client.login(process.env.BOT_TOKEN);
